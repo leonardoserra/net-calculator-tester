@@ -16,8 +16,9 @@ namespace TestCalculator
         [TestCase(0.44f,-34.352f)]
         public void Add_Test(float num1,float num2)
         {
-            Calculator.Add(num1, num2);
-            Assert.Pass();
+            
+            
+            Assert.DoesNotThrow(()=>Calculator.Add(num1, num2));
         }
 
         [Test(Description = "SubtractTestDifferentValues")]
@@ -26,8 +27,7 @@ namespace TestCalculator
         [TestCase(0.44f, -34.352f)]
         public void Subtract_Test(float num1, float num2)
         {
-            Calculator.Subtract(num1, num2);
-            Assert.Pass();
+            Assert.DoesNotThrow(() => Calculator.Subtract(num1, num2));
         }
 
         [Test(Description = "MultiplyTestDifferentValues")]
@@ -36,7 +36,6 @@ namespace TestCalculator
         [TestCase(0.44f, -34.352f)]
         public void Multiply_Test(float num1, float num2)
         {
-            Calculator.Multiply(num1, num2);
             Assert.DoesNotThrow(()=>Calculator.Multiply(num1, num2));
         }
 
